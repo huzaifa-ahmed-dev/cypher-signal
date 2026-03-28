@@ -1,0 +1,98 @@
+"use client";
+import React from 'react';
+import CTA from '@/components/CTA';
+import { ArrowUpCircle, ShieldCheck, Monitor, Zap, HardDrive, Cpu, CheckCircle } from 'lucide-react';
+import { motion } from 'framer-motion';
+
+export default function SystemUpgradesPage() {
+  const features = [
+    { icon: <Monitor className="w-8 h-8 text-[#00E676]" />, title: 'Analog to IP Conversion', desc: 'Seamlessly migrate from legacy analog CCTV to modern high-definition IP camera networks.' },
+    { icon: <Zap className="w-8 h-8 text-[#00E676]" />, title: '4K & 8MP Camera Upgrades', desc: 'Replace outdated low-res cameras with ultra-clear 4K and 8MP models for superior evidence quality.' },
+    { icon: <HardDrive className="w-8 h-8 text-[#00E676]" />, title: 'NVR / DVR Replacement', desc: 'Upgrade to modern NVR systems with larger storage capacity, remote access, and AI analytics.' },
+    { icon: <Cpu className="w-8 h-8 text-[#00E676]" />, title: 'AI-Powered Analytics', desc: 'Add smart features like facial recognition, license plate reading, and intrusion detection.' },
+    { icon: <CheckCircle className="w-8 h-8 text-[#00E676]" />, title: 'Firmware & Software Updates', desc: 'Keep your existing equipment current with the latest security patches and feature updates.' },
+    { icon: <ArrowUpCircle className="w-8 h-8 text-[#00E676]" />, title: 'Scalable System Planning', desc: 'Design upgrades that are future-ready and can easily expand as your needs grow.' },
+  ];
+
+  return (
+    <div className="w-full">
+      <section className="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+        <div className="absolute inset-0 bg-[#0A192F] z-0"></div>
+        <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[#00E676]/10 rounded-full blur-[150px] -mt-40 -ml-40 pointer-events-none z-0"></div>
+        <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00E676]/30 bg-[#00E676]/10 mb-8">
+            <ArrowUpCircle className="w-5 h-5 text-[#00E676]" />
+            <span className="text-[#00E676] font-semibold">Professional System Upgrades</span>
+          </motion.div>
+          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight max-w-5xl mx-auto">
+            Modernize Your Security. <span className="text-gradient">Leave Nothing to Chance.</span>
+          </motion.h1>
+          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-gray-400 text-lg md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
+            Upgrade your legacy analog infrastructure to cutting-edge IP camera networks with zero downtime and full continuity.
+          </motion.p>
+          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="flex justify-center">
+            <a href="#contact-upgrade" className="bg-[#00E676] text-[#0A192F] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#00c968] transition-all shadow-[0_0_20px_rgba(0,230,118,0.4)] hover:shadow-[0_0_30px_rgba(0,230,118,0.6)]">
+              Get an Upgrade Quote
+            </a>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-32 bg-[#061225] relative">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="text-center mb-16 md:mb-24">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6">Next-Level <span className="text-[#00E676]">Capabilities</span></h2>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">From camera swaps to full infrastructure overhauls — we handle every aspect of your security upgrade.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {features.map((feature, idx) => (
+              <motion.div key={idx} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: idx * 0.1 }}
+                className="bg-[#0A192F] p-8 rounded-2xl border border-white/5 hover:border-[#00E676]/30 transition-colors group">
+                <div className="w-16 h-16 bg-[#00E676]/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:bg-[#00E676]/20 transition-all duration-300">
+                  {feature.icon}
+                </div>
+                <h3 className="text-2xl font-bold mb-4">{feature.title}</h3>
+                <p className="text-gray-400 leading-relaxed">{feature.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 bg-[#020C1B]">
+        <div className="container mx-auto px-6 md:px-12">
+          <div className="bg-gradient-to-r from-[#00E676]/20 to-[#0A192F] rounded-3xl p-8 md:p-16 border border-[#00E676]/20 flex flex-col md:flex-row items-center gap-12">
+            <div className="md:w-1/2">
+              <h2 className="text-3xl md:text-4xl font-bold mb-6">Don't Let Outdated Tech Cost You</h2>
+              <p className="text-gray-300 text-lg mb-6 leading-relaxed">
+                Old systems break more often, record in low resolution, and cannot integrate with modern security software. A Cypher Signal upgrade is an investment that pays for itself in reliability, deterrence, and peace of mind.
+              </p>
+              <ul className="space-y-4">
+                <li className="flex items-center gap-3"><ShieldCheck className="text-[#00E676] shrink-0" /> Use your existing cabling where possible to reduce cost.</li>
+                <li className="flex items-center gap-3"><ShieldCheck className="text-[#00E676] shrink-0" /> Phased upgrade plans available to suit your budget.</li>
+                <li className="flex items-center gap-3"><ShieldCheck className="text-[#00E676] shrink-0" /> Full warranty on all new hardware and installation labour.</li>
+              </ul>
+            </div>
+            <div className="md:w-1/2 relative">
+              <div className="aspect-video rounded-2xl overflow-hidden relative shadow-[0_0_30px_rgba(0,230,118,0.15)] border border-white/10">
+                <img
+                  src="/system_upgrade.png"
+                  alt="Modern 4K security camera upgrade"
+                  className="w-full h-full object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#020C1B]/60 to-transparent"></div>
+                <div className="absolute top-4 left-4 bg-[#00E676]/20 border border-[#00E676]/30 text-[#00E676] text-xs font-bold px-3 py-1.5 rounded-full z-10">UPGRADE COMPLETE</div>
+                <div className="absolute bottom-4 left-4 text-green-400 font-mono text-sm z-10">12 x 4K CAMERAS ACTIVE</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div id="contact-upgrade"><CTA /></div>
+    </div>
+  );
+}
