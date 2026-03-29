@@ -158,7 +158,6 @@ export default function Services() {
               We provide comprehensive security integrations utilizing the latest technology to ensure absolute surveillance and fortified boundaries.
             </motion.p>
           </div>
-          </div>
         </div>
 
         {/* 3D Fan Carousel */}
