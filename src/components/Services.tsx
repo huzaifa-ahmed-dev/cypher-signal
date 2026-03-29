@@ -252,7 +252,7 @@ export default function Services() {
         </div>
 
         {/* Navigation & Dot Indicators */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
+        <div className="flex items-center justify-center gap-4 md:gap-6 mt-8">
           <button
             onClick={prev}
             className="group w-12 h-12 rounded-full border border-white/10 bg-[#061225]/40 backdrop-blur-md flex items-center justify-center hover:border-[#00E676]/50 hover:bg-[#00E676]/10 hover:shadow-[0_0_20px_rgba(0,230,118,0.2)] transition-all duration-300 shadow-lg"
