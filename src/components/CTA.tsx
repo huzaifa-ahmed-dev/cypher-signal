@@ -4,7 +4,7 @@ import { Phone, MessageCircle } from 'lucide-react';
 
 export default function CTA() {
   return (
-    <section className="pt-8 pb-16 md:py-24 relative overflow-hidden">
+    <section className="pt-8 pb-8 md:py-24 relative overflow-hidden">
       <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
