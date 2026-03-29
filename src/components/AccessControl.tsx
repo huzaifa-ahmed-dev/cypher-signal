@@ -32,7 +32,7 @@ const accessSolutions = [
 
 export default function AccessControl() {
   return (
-    <section id="access-control" className="py-16 md:py-24 bg-[#020C1B] relative overflow-hidden">
+    <section id="access-control" className="pt-16 pb-8 md:py-24 bg-[#020C1B] relative overflow-hidden">
       {/* Background decoration */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-[#00E676]/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
 

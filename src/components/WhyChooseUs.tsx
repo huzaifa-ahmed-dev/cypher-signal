@@ -14,7 +14,7 @@ const reasons = [
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-[#020C1B] relative overflow-hidden py-16 md:py-24">
+    <section id="why-us" className="bg-[#020C1B] relative overflow-hidden pt-8 pb-16 md:py-24">
       <div className="container mx-auto px-4 md:px-12 relative z-10">
         <div className="flex flex-col lg:flex-row bg-[#061225]/40 backdrop-blur-sm border border-white/5 rounded-3xl overflow-hidden shadow-2xl">
           
