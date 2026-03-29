@@ -5,7 +5,7 @@ import { ArrowRight, MessageCircle } from 'lucide-react';
 
 export default function Hero() {
   return (
-    <section id="home" className="relative pb-16  md:pb-28 overflow-hidden">
+    <section id="home" className="relative pb-8 md:pb-20 overflow-hidden">
       <div className="absolute inset-0 z-0">
         <Image
           src="/hero-bg.png"

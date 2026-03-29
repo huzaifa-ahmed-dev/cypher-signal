@@ -123,7 +123,7 @@ export default function Services() {
   const activeSvc = services[activeReal];
 
   return (
-    <section id="services" className="pt-28 pb-16 md:pt-40 md:pb-24 bg-[#0A192F] relative overflow-hidden scroll-mt-20">
+    <section id="services" className="pt-12 pb-16 md:pt-32 md:pb-24 bg-[#0A192F] relative overflow-hidden scroll-mt-20">
       {/* Ambient background */}
       <div className="absolute top-0 left-0 w-full h-[500px] bg-gradient-to-b from-[#020C1B] to-transparent z-0"></div>
       <div className="absolute -left-40 top-40 w-96 h-96 bg-[#00E676]/5 rounded-full blur-[100px] pointer-events-none z-0"></div>
