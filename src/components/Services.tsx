@@ -158,23 +158,6 @@ export default function Services() {
               We provide comprehensive security integrations utilizing the latest technology to ensure absolute surveillance and fortified boundaries.
             </motion.p>
           </div>
-
-          {/* Nav Buttons */}
-          <div className="flex gap-4">
-            <button
-              onClick={prev}
-              className="group w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-[#061225]/40 backdrop-blur-md flex items-center justify-center hover:border-[#00E676]/50 hover:bg-[#00E676]/10 hover:shadow-[0_0_20px_rgba(0,230,118,0.2)] transition-all duration-300 shadow-lg"
-              aria-label="Previous"
-            >
-              <ChevronLeft className="w-6 h-6 text-white group-hover:text-[#00E676] group-hover:-translate-x-0.5 transition-all duration-300" />
-            </button>
-            <button
-              onClick={next}
-              className="group w-12 h-12 md:w-14 md:h-14 rounded-full border border-white/10 bg-[#061225]/40 backdrop-blur-md flex items-center justify-center hover:border-[#00E676]/50 hover:bg-[#00E676]/10 hover:shadow-[0_0_20px_rgba(0,230,118,0.2)] transition-all duration-300 shadow-lg"
-              aria-label="Next"
-            >
-              <ChevronRight className="w-6 h-6 text-white group-hover:text-[#00E676] group-hover:translate-x-0.5 transition-all duration-300" />
-            </button>
           </div>
         </div>
 
@@ -269,22 +252,39 @@ export default function Services() {
           })}
         </div>
 
-        {/* Dot Indicators */}
-        <div className="flex justify-center gap-2 mt-10">
-          {services.map((_, idx) => (
-            <button
-              key={idx}
-              onClick={() => {
-                // Find shortest path to this dot
-                let target = activeVirtual + (idx - activeReal);
-                if (idx - activeReal > services.length / 2) target -= services.length;
-                if (idx - activeReal < -services.length / 2) target += services.length;
-                setActiveVirtual(target);
-              }}
-              className={`rounded-full transition-all duration-300 ${idx === activeReal ? 'w-8 h-2 bg-[#00E676]' : 'w-2 h-2 bg-white/20 hover:bg-white/40'}`}
-              aria-label={`Go to slide ${idx + 1}`}
-            />
-          ))}
+        {/* Navigation & Dot Indicators */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mt-8">
+          <button
+            onClick={prev}
+            className="group w-12 h-12 rounded-full border border-white/10 bg-[#061225]/40 backdrop-blur-md flex items-center justify-center hover:border-[#00E676]/50 hover:bg-[#00E676]/10 hover:shadow-[0_0_20px_rgba(0,230,118,0.2)] transition-all duration-300 shadow-lg"
+            aria-label="Previous"
+          >
+            <ChevronLeft className="w-6 h-6 text-white group-hover:text-[#00E676] group-hover:-translate-x-0.5 transition-all duration-300" />
+          </button>
+
+          <div className="flex justify-center gap-2">
+            {services.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  let target = activeVirtual + (idx - activeReal);
+                  if (idx - activeReal > services.length / 2) target -= services.length;
+                  if (idx - activeReal < -services.length / 2) target += services.length;
+                  setActiveVirtual(target);
+                }}
+                className={`rounded-full transition-all duration-300 ${idx === activeReal ? 'w-8 h-2 bg-[#00E676]' : 'w-2 h-2 bg-white/20 hover:bg-white/40'}`}
+                aria-label={`Go to slide ${idx + 1}`}
+              />
+            ))}
+          </div>
+
+          <button
+            onClick={next}
+            className="group w-12 h-12 rounded-full border border-white/10 bg-[#061225]/40 backdrop-blur-md flex items-center justify-center hover:border-[#00E676]/50 hover:bg-[#00E676]/10 hover:shadow-[0_0_20px_rgba(0,230,118,0.2)] transition-all duration-300 shadow-lg"
+            aria-label="Next"
+          >
+            <ChevronRight className="w-6 h-6 text-white group-hover:text-[#00E676] group-hover:translate-x-0.5 transition-all duration-300" />
+          </button>
         </div>
       </div>
     </section>
