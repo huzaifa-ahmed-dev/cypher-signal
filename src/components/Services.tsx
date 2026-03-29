@@ -120,6 +120,27 @@ export default function Services() {
     isDragging.current = false;
   };
 
+  // ── Touch swipe handlers ─────────────────────────────────────────────────────
+  const handleTouchStart = (e: React.TouchEvent) => {
+    dragStartX.current = e.touches[0].clientX;
+    isDragging.current = false;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent) => {
+    if (dragStartX.current === null) return;
+    const delta = e.touches[0].clientX - dragStartX.current;
+    if (Math.abs(delta) > 8) isDragging.current = true;
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (dragStartX.current === null) return;
+    const delta = e.changedTouches[0].clientX - dragStartX.current;
+    if (Math.abs(delta) > 50) {
+      delta < 0 ? next() : prev();
+    }
+    dragStartX.current = null;
+  };
+
   const activeSvc = services[activeReal];
 
   return (
@@ -162,12 +183,15 @@ export default function Services() {
 
         {/* 3D Fan Carousel */}
         <div
-          className="relative flex items-center justify-center select-none cursor-grab active:cursor-grabbing"
+          className="relative flex items-center justify-center select-none cursor-grab active:cursor-grabbing touch-pan-y"
           style={{ height: '420px', perspective: '1200px' }}
           onMouseDown={handleMouseDown}
           onMouseMove={handleMouseMove}
           onMouseUp={handleMouseUp}
           onMouseLeave={handleMouseLeave}
+          onTouchStart={handleTouchStart}
+          onTouchMove={handleTouchMove}
+          onTouchEnd={handleTouchEnd}
         >
           {services.map((svc, relativeIdx) => {
             // Because it's an infinite loop, we map over the physical array but calculate offset from activeReal
