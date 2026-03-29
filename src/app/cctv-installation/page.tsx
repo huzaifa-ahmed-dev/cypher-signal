@@ -37,7 +37,7 @@ export default function CCTVInstallationPage() {
                <div className="absolute inset-4 bg-gradient-to-tr from-[#00E676]/10 to-transparent border border-[#00E676]/20 rounded-[2.5rem] transform rotate-3"></div>
                
                <img 
-                 src="/cctv_expertise.png" 
+                 src="/cctv-hero.jpg" 
                  alt="CCTV Security Cameras" 
                  className="relative z-10 w-[90%] h-[90%] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]" 
                />
