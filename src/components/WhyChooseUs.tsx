@@ -113,7 +113,7 @@ export default function WhyChooseUs() {
             <div className="mt-12">
               <Link 
                 href="#contact" 
-                className="inline-flex items-center gap-2 bg-[#00E676] text-[#0A192F] px-8 py-3.5 rounded-xl font-bold text-lg hover:bg-[#00c968] hover:shadow-[0_0_20px_rgba(0,230,118,0.4)] transition-all group"
+                className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-[#00E676] text-[#0A192F] px-6 md:px-8 py-3.5 md:py-4 rounded-xl font-bold text-base md:text-lg hover:bg-[#00c968] hover:shadow-[0_0_20px_rgba(0,230,118,0.4)] transition-all group whitespace-nowrap"
               >
                 Request Your Free Quote
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
