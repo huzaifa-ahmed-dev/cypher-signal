@@ -27,7 +27,7 @@ export default function Contact() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
-          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY,
+          access_key: process.env.NEXT_PUBLIC_WEB3FORMS_KEY || "b1c4d269-d3a7-4223-baec-5e03fdaeb45d",
           subject: `New Enquiry from ${formData.name} — Cypher Signal`,
           from_name: 'Cypher Signal Website',
           name: formData.name,
