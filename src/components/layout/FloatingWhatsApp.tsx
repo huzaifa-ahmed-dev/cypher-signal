@@ -1,6 +1,21 @@
+import { Phone } from 'lucide-react';
+
 export default function FloatingWhatsApp() {
   return (
-    <div className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 group flex items-center">
+    <>
+      {/* Call Button - Mobile Only */}
+      <div className="fixed bottom-6 left-6 z-50 group flex items-center md:hidden">
+        <a
+          href="tel:+971547172486"
+          className="relative bg-[#00E676] text-[#0A192F] p-4 rounded-full shadow-[0_4px_20px_rgba(0,230,118,0.5)] active:scale-95 transition-all duration-300 flex items-center justify-center z-10"
+          aria-label="Call Us"
+        >
+          <span className="absolute inset-0 rounded-full bg-[#00E676] opacity-40 animate-ping" style={{ animationDuration: '2.5s' }}></span>
+          <Phone className="w-8 h-8 relative z-10" strokeWidth={2.5} />
+        </a>
+      </div>
+
+      <div className="fixed bottom-6 right-6 md:right-8 md:bottom-8 z-50 group flex items-center">
       
       {/* Tooltip on the left of the button */}
       <span className="absolute right-full mr-4 bg-white text-[#0A192F] font-bold text-sm px-4 py-2 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap shadow-xl border border-gray-100 pointer-events-none origin-right">
@@ -25,5 +40,6 @@ export default function FloatingWhatsApp() {
         </svg>
       </a>
     </div>
+    </>
   );
 }
