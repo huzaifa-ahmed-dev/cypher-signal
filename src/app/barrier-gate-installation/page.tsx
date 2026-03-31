@@ -16,28 +16,70 @@ export default function BarrierGatePage() {
 
   return (
     <div className="w-full">
-      <section className="relative pt-12 pb-20 md:pt-24 md:pb-32 overflow-hidden">
+      <section className="relative pt-20 pb-20 md:pt-32 md:pb-32 overflow-hidden">
         <div className="absolute inset-0 bg-[#0A192F] z-0"></div>
-        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00E676]/10 rounded-full blur-[150px] -mt-40 -mr-40 pointer-events-none z-0"></div>
-        <div className="container mx-auto px-6 md:px-12 relative z-10 text-center">
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#00E676]/30 bg-[#00E676]/10 mb-8">
-            <Car className="w-5 h-5 text-[#00E676]" />
-            <span className="text-[#00E676] font-semibold">Commercial Barrier Gates</span>
+        <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-[#00E676]/5 rounded-full blur-[150px] -mt-40 -mr-40 pointer-events-none z-0"></div>
+        <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-[#00B4D8]/5 rounded-full blur-[150px] -mb-40 -ml-40 pointer-events-none z-0"></div>
+        
+        <div className="container mx-auto px-6 md:px-12 relative z-10 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+          
+          {/* Left: Visual Graphic */}
+          <motion.div 
+            initial={{ opacity: 0, x: -40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
+            className="w-full lg:w-1/2 flex justify-center order-2 lg:order-1"
+          >
+            <div className="relative w-full max-w-lg aspect-[4/3] lg:aspect-square flex items-center justify-center p-6">
+               <div className="absolute inset-0 bg-[#061225] border border-white/5 rounded-[3rem] shadow-2xl transform -rotate-3"></div>
+               <div className="absolute inset-4 bg-gradient-to-tr from-[#00E676]/10 to-transparent border border-[#00E676]/20 rounded-[2.5rem] transform rotate-3"></div>
+               
+               <img 
+                 src="/barrier_gate_uae.png" 
+                 alt="Commercial Barrier Gates" 
+                 className="relative z-10 w-[90%] h-[90%] object-cover rounded-3xl shadow-[0_20px_50px_rgba(0,0,0,0.5)]" 
+               />
+               
+               <motion.div 
+                 animate={{ y: [0, -15, 0] }} 
+                 transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
+                 className="absolute -top-6 -right-6 bg-[#020C1B] p-4 rounded-2xl shadow-xl border border-white/10 z-20"
+               >
+                 <Car className="w-8 h-8 text-[#00E676]" />
+               </motion.div>
+            </div>
           </motion.div>
-          <motion.h1 initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.1 }}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold mb-8 leading-tight max-w-5xl mx-auto">
-            Control Every Entry. <span className="text-gradient">Secure Every Exit.</span>
-          </motion.h1>
-          <motion.p initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 text-lg md:text-2xl mb-12 max-w-3xl mx-auto leading-relaxed">
-            Robust barrier gate systems for parking lots, commercial compounds, and high-security access points across the UAE.
-          </motion.p>
-          <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6, delay: 0.3 }} className="flex justify-center">
-            <a href="#contact-barrier" className="bg-[#00E676] text-[#0A192F] px-8 py-4 rounded-xl font-bold text-lg hover:bg-[#00c968] transition-all shadow-[0_0_20px_rgba(0,230,118,0.4)] hover:shadow-[0_0_30px_rgba(0,230,118,0.6)]">
+
+          {/* Right: Content Section mirroring Reference Image */}
+          <motion.div 
+            initial={{ opacity: 0, x: 40 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="w-full lg:w-1/2 flex flex-col items-start order-1 lg:order-2"
+          >
+            <div className="border-l-[6px] border-[#00E676] pl-6 md:pl-10 py-2 mb-8">
+              <h2 className="text-[#00E676] font-bold tracking-[0.2em] text-sm md:text-lg uppercase mb-4" style={{ fontFamily: 'var(--font-rajdhani), sans-serif' }}>
+                Commercial Gates
+              </h2>
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] text-white uppercase tracking-tight">
+                CONTROL EVERY <br />
+                ENTRY. SECURE <br />
+                EVERY EXIT.
+              </h1>
+            </div>
+            
+            <p className="text-gray-400 text-base md:text-lg mb-10 max-w-lg leading-relaxed">
+              Robust barrier gate systems for parking lots, commercial compounds, and high-security access points across the UAE.
+            </p>
+            
+            <a 
+              href="#contact-barrier" 
+              className="bg-[#061225] border border-white/10 text-white hover:bg-[#00E676] hover:text-[#0A192F] hover:border-[#00E676] px-10 py-5 rounded-full font-bold text-sm md:text-base uppercase tracking-wider transition-all duration-300 shadow-lg hover:shadow-[0_0_30px_rgba(0,230,118,0.5)]"
+            >
               Get a Barrier Gate Quote
             </a>
           </motion.div>
+
         </div>
       </section>
 
