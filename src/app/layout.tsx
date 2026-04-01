@@ -8,8 +8,20 @@ import FloatingWhatsApp from '@/components/layout/FloatingWhatsApp';
 const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
-  title: 'CYPHER SIGNAL | Premium CCTV & Security UAE',
-  description: 'Top-tier CCTV installation, maintenance, and smart security solutions in the UAE. Get your free site visit today!',
+  title: {
+    template: '%s | CYPHER SIGNAL',
+    default: 'CCTV Installation Dubai | CYPHER SIGNAL | Free Site Visit',
+  },
+  description: 'Leading CCTV and security systems installation in Dubai & UAE. We offer smart cameras, access control, and barrier gates. Claim your free site visit today.',
+  keywords: ['CCTV Installation Dubai', 'Security Cameras UAE', 'Cypher Signal', 'Smart Security', 'Access Control', 'Barrier Gates'],
+  openGraph: {
+    title: 'CCTV Installation Dubai | CYPHER SIGNAL',
+    description: 'Top-tier CCTV installation, maintenance, and smart security solutions in Dubai & UAE.',
+    url: 'https://cyphersignal.com',
+    siteName: 'Cypher Signal',
+    locale: 'en_AE',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
