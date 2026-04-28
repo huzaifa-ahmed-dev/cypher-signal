@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="col-span-1 md:col-span-2 text-gray-400">
           <Link href="/" className="flex items-center gap-2 mb-4 text-white">
             <ShieldCheck className="text-[#00E676] w-6 h-6" />
-            <span className="text-lg font-bold tracking-tight">GULF VISION <span className="text-[#00E676]">SECURITY</span></span>
+            <span className="text-lg font-bold tracking-tight">CYPHER <span className="text-[#00E676]">SIGNAL</span></span>
           </Link>
           <p className="max-w-md">
             State-of-the-art CCTV and smart security installations protecting homes and businesses across the United Arab Emirates since 2012.
@@ -18,9 +18,9 @@ export default function Footer() {
         <div>
           <h4 className="text-white font-semibold mb-4 text-lg">Quick Links</h4>
           <ul className="space-y-2 text-gray-400">
-            <li><Link href="#services" className="hover:text-[#00E676] transition-colors">Services</Link></li>
-            <li><Link href="#why-us" className="hover:text-[#00E676] transition-colors">Why Choose Us</Link></li>
-            <li><Link href="#how-it-works" className="hover:text-[#00E676] transition-colors">Process</Link></li>
+            <li><Link href="/#services" className="hover:text-[#00E676] transition-colors">Services</Link></li>
+            <li><Link href="/#why-us" className="hover:text-[#00E676] transition-colors">Why Choose Us</Link></li>
+            <li><Link href="/#how-it-works" className="hover:text-[#00E676] transition-colors">Process</Link></li>
             <li><Link href="/contact" className="hover:text-[#00E676] transition-colors">Contact</Link></li>
             <li><Link href="/blogs" className="hover:text-[#00E676] transition-colors">Blogs</Link></li>
           </ul>

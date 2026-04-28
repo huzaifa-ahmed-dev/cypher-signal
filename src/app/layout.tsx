@@ -22,6 +22,30 @@ export const metadata: Metadata = {
     locale: 'en_AE',
     type: 'website',
   },
+  verification: {
+    google: 'YOUR_GOOGLE_SEARCH_CONSOLE_CODE',
+  },
+};
+
+const localBusinessSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'LocalBusiness',
+  name: 'Cypher Signal',
+  url: 'https://cyphersignal.com',
+  telephone: '+971547172486',
+  email: 'info@cyphersignal.com',
+  address: {
+    '@type': 'PostalAddress',
+    addressLocality: 'Business Bay',
+    addressRegion: 'Dubai',
+    addressCountry: 'AE',
+  },
+  areaServed: {
+    '@type': 'Place',
+    name: 'Dubai, UAE',
+  },
+  description: 'Leading CCTV and security systems installation in Dubai & UAE. Smart cameras, access control, and barrier gates.',
+  priceRange: '$$',
 };
 
 export default function RootLayout({
@@ -38,6 +62,25 @@ export default function RootLayout({
         </main>
         <Footer />
         <FloatingWhatsApp />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
+        {/* Google Analytics 4 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-3W10EP4EH4"
+        />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-3W10EP4EH4');
+            `,
+          }}
+        />
       </body>
     </html>
   );
